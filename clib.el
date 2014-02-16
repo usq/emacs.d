@@ -79,6 +79,9 @@
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
 
+
+
+;;checkout a Obj-C .gitignore
 (defun checkout-gitignore()
   (interactive)
   (let ((repourl "https://github.com/github/gitignore.git")
@@ -94,6 +97,14 @@
   (checkout-gitignore)
   (save-buffers-kill-)
 )
+
+
+;;isearch at start of word, not end
+(add-hook 'isearch-mode-end-hook 'my-goto-match-beginning)
+(defun my-goto-match-beginning ()
+  (when (and isearch-forward (not isearch-mode-end-hook-quit)) (goto-char isearch-other-end)))
+
+
 
 (provide 'clib)
 

@@ -5,3 +5,4 @@ elpa/*
 /places
 /.places
 /.mc-lists.el
+/custom.el

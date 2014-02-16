@@ -227,3 +227,8 @@
 
 ;;load my own functions
 (require 'clib)
+
+;;load music controlls
+(require 'music)
+
+

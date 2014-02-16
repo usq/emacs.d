@@ -241,11 +241,14 @@
 ;; Create scratch buffer
 (global-set-key (kbd "C-c b") 'create-scratch-buffer)
 
+
+;;org-mode
 ;; Move windows, even in org-mode
 (global-set-key (kbd "<s-right>") 'windmove-right)
 (global-set-key (kbd "<s-left>") 'windmove-left)
 (global-set-key (kbd "<s-up>") 'windmove-up)
 (global-set-key (kbd "<s-down>") 'windmove-down)
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; Magit
 (global-set-key (kbd "C-x m") 'magit-status)
