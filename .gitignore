@@ -3,3 +3,5 @@ elpa/*
 /eshell/lastdir
 /history
 
+/.places
+/.mc-lists.el
