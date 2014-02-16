@@ -225,3 +225,5 @@
 
 (require 'better-defaults)
 
+;;load my own functions
+(require 'clib)
