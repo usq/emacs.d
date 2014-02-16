@@ -135,4 +135,9 @@
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-.") nil))
 
+(setq  magit-emacsclient-executable "/usr/bin/emacsclient")
+
+
 (provide 'setup-magit)
+
+
