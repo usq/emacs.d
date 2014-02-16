@@ -17,3 +17,5 @@
 		    "\tset theBuddy to buddy \"" receiver "\" of targetService\n" 
 		    "\tsend \"" message "\" to theBuddy\n"
 		    "end tell")))
+
+(provide 'osx)

@@ -228,6 +228,9 @@
 ;;load my own functions
 (require 'clib)
 
+;;load osx tools
+(require 'osx)
+
 ;;load music controlls
 (require 'music)
 
