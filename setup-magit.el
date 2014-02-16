@@ -131,13 +131,11 @@
 (global-set-key (kbd "C-x v p") #'git-messenger:popup-message)
 
 ;; Don't bother me with flyspell keybindings
-
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-.") nil))
 
-;;(set-variable 'magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/Emacs")
+;;fix for magit commit opening new window for message
 (set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient")
-
 
 (provide 'setup-magit)
 
