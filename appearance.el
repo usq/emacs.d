@@ -1,10 +1,10 @@
-(setq visible-bell t
+(setq visible-bell -1
       font-lock-maximum-decoration t
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+(global-hl-line-mode -1)
 
 ;; Set custom theme path
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
@@ -57,7 +57,7 @@
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
-  (blink-cursor-mode -1))
+  (blink-cursor-mode 1))
 
 ;; Make zooming affect frame instead of buffers
 (require 'zoom-frm)

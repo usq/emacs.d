@@ -1,4 +1,4 @@
-;
+
 ; I don't need to kill emacs that easily
 ;; the mnemonic is C-x REALLY QUIT
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
@@ -71,8 +71,8 @@
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
 ;; Use shell-like backspace C-h, rebind help to F1
-(define-key key-translation-map [?\C-h] [?\C-?])
-(global-set-key (kbd "<f1>") 'help-command)
+;;(define-key key-translation-map [?\C-h] [?\C-?])
+;;(global-set-key (kbd "<f1>") 'help-command)
 
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
 
@@ -149,8 +149,6 @@
 ;; toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
 (global-set-key (kbd "s-b") 'quick-switch-buffer)
-
-(global-set-key (kbd "s-y") 'bury-buffer)
 
 ;; Revert without any fuss
 (global-set-key (kbd "M-<escape>") (λ (revert-buffer t t)))
@@ -243,11 +241,6 @@
 
 
 ;;org-mode
-;; Move windows, even in org-mode
-(global-set-key (kbd "<s-right>") 'windmove-right)
-(global-set-key (kbd "<s-left>") 'windmove-left)
-(global-set-key (kbd "<s-up>") 'windmove-up)
-(global-set-key (kbd "<s-down>") 'windmove-down)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; Magit
@@ -315,11 +308,18 @@
 ;; Find files by name and display results in dired
 (global-set-key (kbd "M-s f") 'find-name-dired)
 
+(global-set-key (kbd "<s-right>") 'paredit-forward-slurp-sexp)
+(global-set-key (kbd "s-<left>") 'paredit-forward-barf-sexp)
+
 ;; Find file in project
 (global-set-key (kbd "M-o") 'find-file-in-project)
 
 ;; Find file in project, with specific patterns
 (global-unset-key (kbd "C-x C-o")) ;; which used to be delete-blank-lines (also bound to C-c C-<return>)
+
+(global-set-key (kbd "C-x C-o he") (ffip-create-pattern-file-finder "*.h"))
+(global-set-key (kbd "C-x C-o cc") (ffip-create-pattern-file-finder "*.c"))
+
 (global-set-key (kbd "C-x C-o ja") (ffip-create-pattern-file-finder "*.java"))
 (global-set-key (kbd "C-x C-o js") (ffip-create-pattern-file-finder "*.js"))
 (global-set-key (kbd "C-x C-o ht") (ffip-create-pattern-file-finder "*.html"))
@@ -346,5 +346,7 @@
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
 (define-key occur-mode-map (kbd "n") 'next-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
+
+
 
 (provide 'key-bindings)

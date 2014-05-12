@@ -54,7 +54,8 @@
 (defun init--install-packages ()
   (packages-install
    '(magit
-     paredit
+     dirtree
+     ;;     paredit
      move-text
      gist
      htmlize
@@ -71,6 +72,7 @@
      guide-key
      nodejs-repl
      restclient
+     php-mode
      highlight-escape-sequences
      whitespace-cleanup-mode
      elisp-slime-nav
@@ -81,7 +83,10 @@
      groovy-mode
      prodigy
      cider
+     tea-time
      color-theme
+     xcscope
+     xkcd
      cider-tracing)))
 
 (condition-case nil
@@ -122,7 +127,7 @@
 (require 'setup-perspective)
 (require 'setup-ffip)
 (require 'setup-html-mode)
-(require 'setup-paredit)
+;;(require 'setup-paredit)
 
 (require 'prodigy)
 (global-set-key (kbd "C-x M-m") 'prodigy)
@@ -219,9 +224,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
-;; Conclude init by setting up specifics for the current user
-(when (file-exists-p user-settings-dir)
-  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 
 (require 'better-defaults)
 
@@ -234,4 +236,16 @@
 ;;load music controlls
 (require 'music)
 
+(require 'alarm)
 
+(require 'tea-time)
+
+(require 'online-services)
+
+(require 'dirtree)
+
+
+
+;; Conclude init by setting up specifics for the current user
+(when (file-exists-p user-settings-dir)
+  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
